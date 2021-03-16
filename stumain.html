@@ -1,5 +1,8 @@
 <html>
     <head>
+          
+  <link href="img/icon/favicon.png" type="image/png" rel="icon" >
+      <title>Poornima University </title>
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/bootstrap.css">
         <script src="js/script.js"></script>
@@ -24,10 +27,26 @@
             .nav-link{
                 font-size: x-large;
             }
+          .loader {
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background-color: #ffffffcf;
+        }
+        .loader img{
+            position: relative;
+            margin-left: 35%;
+            margin-top: 7.5%;
+        }
             
         </style>
     </head>
     <body>
+      <div class="loader" ><img width="350px" height="350px" src="C:/Users/safezone/Downloads/Poornima_University_Logo.gif"></div>
+
         <nav class="navbar navbar-expand-lg navbar-light bg-light navcolor">
             <a class="navbar-brand" href="#"><img src="img/Poornima_UniversityLogo.png" class="mainimg" width="100px"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
@@ -43,18 +62,19 @@
                 <li class="nav-item">
                   <a class="nav-link" href="#"><center>Personal Information</center></a>
                 </li>
-                
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Academics</a>
-                    <div class="dropdown-menu">
+
+                <li class="nav-item dropdown open">
+                    <center><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Academics</center></a>
+                  <div class="dropdown-menu">
                       <a class="dropdown-item" href="#">Attendance</a>
                       <a class="dropdown-item" href="#">Assignment</a>
                       <a class="dropdown-item" href="#">Result</a>
                       <a class="dropdown-item" href="#">Library</a>
                       <a class="dropdown-item" href="#">Time Table</a>
                     </div>
+                  </center> 
                   </li>
-                  
+
                 <li class="nav-item">
                     <a class="nav-link" href="#"><center>Accounts</center></a>
                   </li>
@@ -81,56 +101,21 @@
                   <a class="dropdown-item" href="#">Logout</a>
                 </div>
               </li>
-            </nav>     
-            <div class="row" style="margin: 15px;">
-              <div class="col-lg-4" >
-                <div class="bs-component">
-                  <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
-                    <img src="img/icon/dl/faculty1d.png"/>
-                  </div>
-                  
-                  <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
-                    <img src="img/icon/dl/hostell.png"/>
-                  </div>
-                  
-                  <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
-                    <img src="img/icon/dl/notice1d.png"/>
-                  </div>
-                  
-                  <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
-                    <img src="img/icon/dl/placementl.png"/>
-                  </div>
-                  </div>
-              </div><div class="col-lg-4">
-                <div class="bs-component">
-                  <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
-                    <img src="img/icon/dl/profilel.png"/>
-                  </div>
-                  
-                  <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
-                    <img src="img/icon/dl/studentd.png"/>
-                  </div>
-                  
-                  <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
-                    <img src="img/icon/dl/timetablel.png"/>
-                  </div>
-                  </div>
-              </div>
-              <div class="col-lg-4">
-                <div class="bs-component">
-                  <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
-                    <img src="img/icon/dl/transportd.png"/>
-                  </div>
-                  
-                  <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
-                    <img src="img/icon/faculty1.png"/>
-                  </div>
-                  
-                  <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
-                    <img src="img/icon/faculty1.png"/>
-                  </div>
-                  </div>
-              </div>
-    </div>
-    </body>
+            </nav>
+            <marquee>IS-2027-2031, Ramchandrapura, P.O. Vidhani Vatika, Sitapura Extension, Jaipur, Rajasthan (India) 303905.</marquee>
+              <iframe  style="width: -webkit-fill-available; height: -webkit-fill-available;" src="C:\Users\safezone\Desktop\finalprj\stuhome.html">
+              </iframe>
+              <script>
+                window.onload = function() 
+                {
+                    //display loader on page load 
+                    $('.loader').fadeOut();
+                }
+            
+              $('#video_id').on('loadstart', function (event) {
+                $(this).addClass('loading');
+              });
+            </script>
+   
+            </body>
 </html> 
