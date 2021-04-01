@@ -1,0 +1,120 @@
+<html>
+    <head>
+          
+  <link href="img/icon/favicon.png" type="image/png" rel="icon" >
+      <title>Poornima University </title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <script src="js/script.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- jQuery -->
+        <link rel="stylesheet" href= "https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> 
+  
+    <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> 
+    </script> 
+  
+    <script src= "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"> 
+    </script> 
+  
+    <script src= "https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"> 
+    </script>  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        
+        <link href="https://fonts.googleapis.com/css2?family=Aladin&display=swap" rel="stylesheet">
+        <style>
+            .navcolor{
+                background: linear-gradient(90deg, #1575cf 5.13%, #00A9FC 77.11%);
+            }
+            .nav-link{
+                font-size: x-large;
+            }
+          .loader {
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background-color: #ffffffcf;
+        }
+        .loader img{
+            position: relative;
+            margin-left: 35%;
+            margin-top: 7.5%;
+        }
+            
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light navcolor">
+            <a class="navbar-brand" href="#"><img src="{{url_for('static', filename='img/Poornima_UniversityLogo.png')}}" class="mainimg" width="100px"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarColor03">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#"><center>Home</center>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#"><center>Personal Information</center></a>
+                </li>
+
+                <li class="nav-item dropdown open">
+                    <center><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Academics</center></a>
+                  <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#">Attendance</a>
+                      <a class="dropdown-item" href="#">Assignment</a>
+                      <a class="dropdown-item" href="#">Result</a>
+                      <a class="dropdown-item" href="#">Library</a>
+                      <a class="dropdown-item" href="#">Time Table</a>
+                    </div>
+                  </center> 
+                  </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><center>Accounts</center></a>
+                  </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/notice"><center>Notice</center></a>
+                  </li>  
+                  
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Facility</a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Hostel</a>
+                    <a class="dropdown-item" href="#">Transport</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><center>Placement</center></a>
+                  </li>
+              </ul>
+            </div>
+            <ul class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><img src="img/Poornima_UniversityLogo.png" class="mainim" width="80px">
+                </a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Logout</a>
+                </div>
+              </li>
+            </nav>
+            <marquee>IS-2027-2031, Ramchandrapura, P.O. Vidhani Vatika, Sitapura Extension, Jaipur, Rajasthan (India) 303905.</marquee>
+              <iframe  style="width: -webkit-fill-available; height: -webkit-fill-available;" src="{{temp}}">
+              </iframe>
+              <footer class="navcolor" style="width: -webkit-fill-available; height: 10%;"></footer>
+              <script>
+                window.onload = function() 
+                {
+                    //display loader on page load 
+                    $('.loader').fadeOut();
+                }
+            
+              $('#video_id').on('loadstart', function (event) {
+                $(this).addClass('loading');
+              });
+            </script>
+   
+            </body>
+</html> 
