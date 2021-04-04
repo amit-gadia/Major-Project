@@ -121,7 +121,7 @@ class add_roles:
         id=cur.fetchall()
         sql="insert into role(fname,lname,dob,qualification,salary,gender,aano,bg,role)values(%s,%s,%s,%s,%s,%s,%s,%s,%s);"
         val=(f_n,l_n,date,Qualification,salary,customRadio,aano,bg,role)
-        cur.execute(sql,val)xx
+        cur.execute(sql,val)
         userid=role+"@"+f_n+l_n+str(id[-1][0]+1)
         password=role+"@123"
         name=f_n+l_n
