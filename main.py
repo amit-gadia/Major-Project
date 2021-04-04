@@ -15,7 +15,7 @@ def down(file):
 class adminnotice:
     @app.route("/tnotice")
     def notice():
-        st="maintemp/adminmain.html"
+        st="maintemp/admin_main.html"
         return render_template(st,temp="/noticeicon")
     @app.route("/noticeicon")
     def show_noticemain():
@@ -38,20 +38,112 @@ class adminnotice:
         conn.commit()
         return view_notice.show_notice()
 
-class add_role:
+class Student:
     @app.route("/add_student")  
-    def user():
-        st="maintemp/adminmain.html"
+    def addStudent():
+        st="maintemp/admin_main.html"
         return render_template(st,temp="/stu")
 
     @app.route("/stu")
     def add_stu():
         return render_template('adduser/addstu_form.html')
+class Placement:
+    @app.route("/add_placement")  
+    def addPlacement():
+        st="maintemp/admin_main.html"
+        return render_template(st,temp="/pla")
+
+    @app.route("/pla")
+    def add_pla():
+        return render_template('adduser/addpla_form.html')
+
+class Faculty:
+    @app.route("/add_faculty")  
+    def addFaculty():
+        st="maintemp/admin_main.html"
+        return render_template(st,temp="/fac")
+
+    @app.route("/fac")
+    def add_fac():
+        return render_template('adduser/addfac_form.html')
+class Warden:
+    @app.route("/add_warden")  
+    def addWarden():
+        st="maintemp/admin_main.html"
+        return render_template(st,temp="/war")
+        
+    @app.route("/war")
+    def add_war():
+        return render_template('adduser/addwar_form.html')
+
+class Accounts:
+    @app.route("/add_accounts")  
+    def addAccounts():
+        st="maintemp/admin_main.html"
+        return render_template(st,temp="/acc")
+        
+    @app.route("/acc")
+    def add_acc():
+        return render_template('adduser/addacc_form.html')
+class Transport:
+    @app.route("/add_transport")  
+    def addTransport():
+        st="maintemp/admin_main.html"
+        return render_template(st,temp="/tra")
+        
+    @app.route("/tra")
+    def add_tra():
+        return render_template('adduser/addtra_form.html')
+class Library:
+    @app.route("/add_library")  
+    def addLibrary():
+        st="maintemp/admin_main.html"
+        return render_template(st,temp="/lib")
+        
+    @app.route("/lib")
+    def add_lib():
+        return render_template('adduser/addlib_form.html')
+
+class add_roles:
+    @app.route("/addnewrole",methods=['POST'])
+    def add_role():
+        f_n=request.form['f_n']
+        l_n=request.form['l_n']
+        date=request.form['date']
+        Qualification=request.form['Qualification']
+        salary=request.form['salary']
+        customRadio=request.form['customRadio']
+        aano=request.form['aano']
+        bg=request.form['bg']
+        role=request.form['role']
+        sql="select id from users;"
+        cur.execute(sql)
+        id=cur.fetchall()
+        sql="insert into role(fname,lname,dob,qualification,salary,gender,aano,bg,role)values(%s,%s,%s,%s,%s,%s,%s,%s,%s);"
+        val=(f_n,l_n,date,Qualification,salary,customRadio,aano,bg,role)
+        cur.execute(sql,val)xx
+        userid=role+"@"+f_n+l_n+str(id[-1][0]+1)
+        password=role+"@123"
+        name=f_n+l_n
+        sql="insert into users(name,user_id,passwd,role)values(%s,%s,%s,%s);"
+        val=(name,userid,password,role)
+        cur.execute(sql,val)
+        conn.commit()
+        if(role=="Warden"):
+            return Warden.add_war()
+        elif(role=="Placement"):
+            return Placement.add_pla()
+        elif(role=="Accounts"):
+            return Accounts.add_acc()
+        elif(role=="Transport"):
+            return Transport.add_tra()
+        elif(role=="Library"):
+            return Library.add_lib()
 
 class view_notice:
     @app.route("/notice")
     def view_notice():
-        st="maintemp/"+session['userrole']+"main.html"
+        st="maintemp/"+session['userrole']+"_main.html"
         return render_template(st,temp="/shownotice")
     @app.route("/shownotice")
     def show_notice():
@@ -84,7 +176,7 @@ class main():
                 session['user']=gg[0][1]
                 session['userrole']=gg[0][0]
                 print(session)
-                st="maintemp/"+gg[0][0]+"main.html"
+                st="maintemp/"+gg[0][0]+"_main.html"
                 print(st)
                 return render_template(st)
                     
@@ -94,4 +186,4 @@ class main():
             
         return "Hello"
 
-app.run(host="0.0.0.0")
+app.run(debug=True,host="0.0.0.0")
