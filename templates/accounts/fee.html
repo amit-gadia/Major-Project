@@ -46,24 +46,33 @@
 <div class="loader" ><img width="350px" height="350px" src="{{url_for('static', filename='img/Poornima_UniversityLogo.png')}}"></div>
 <div>
   <center>
-<form action="/addnewrole" method="POST" enctype="multipart/form-data">
-    <table class="table table-hover">
-      <tbody>
-        <tr>
-          <th scope="col">First Name</th>
-        </tr>
-        <tr width="30%">
-          <td scope="col"><input type="text" class="form-control" name="f_n" id="exampleInputPassword1" placeholder="First Name" ></td>
-          <th></th>
-        </tr>
-    <input type="hidden" value="Accounts" name="role">
-          <td><input type="submit" class="btn btn-primary btn-lg"></td>
-          <th></th>
-        </tr>
-      </tbody>
-    </table>
-    </form>
-    </center>
+    <form action="/addnewrole" method="POST" enctype="multipart/form-data">
+        <table class="table table-hover">
+          <tbody>
+            
+            
+            <tr>
+                <td></td>
+                <th scope="col">Registration Number</th>
+                <td scope="col"><input type="text" class="form-control" name="Registration Number" id="exampleInputPassword1" placeholder="Registration Number" ></td>
+                <th></th>
+              </tr>
+    
+             
+              
+              
+            <tr>
+              <td></td>
+              <th scope="row"></th>
+              
+        <input type="hidden" value="Accounts" name="role">
+              <td><input type="submit" class="btn btn-primary btn-lg"></td>
+              <th></th>
+            </tr>
+          </tbody>
+        </table>
+        </form>
+        </center>
 <script>
     window.onload = function() 
     {
